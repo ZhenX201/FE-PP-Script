@@ -1,0 +1,105 @@
+local Target = "LocalPlayer"
+
+local function PickUp(ItemName : string)
+	pcall(function()
+		workspace.Remote.ItemHandler:InvokeServer(workspace.Prison_ITEMS:FindFirstChild(ItemName, true):FindFirstChildOfClass("Part"))
+		local New = Instance.new("Weld", game.Players.LocalPlayer.Backpack:FindFirstChild(ItemName))
+		New.Name = "MyTool"
+	end)
+end
+
+local function SPAWNYARDPP(MiddlePosition : Vector3, Gun : string)
+	PickUp(Gun or "Remington 870")
+	local Gun = game.Players.LocalPlayer.Backpack:FindFirstChild(Gun or "Remington 870") or game.Players.LocalPlayer.Character:FindFirstChild(Gun or "Remington 870")
+	local Events = {}
+	local function AddEvent(Cframe : CFrame, Distance : number)
+		Events[#Events + 1] = {
+			["RayObject"] = Ray.new(Vector3.new(), Vector3.new()), 
+			["Distance"] = Distance, 
+			["Cframe"] = Cframe, 
+			["Hit"] = nil
+		}
+	end
+	AddEvent(CFrame.new(MiddlePosition + Vector3.new(2.9383544921875, 3.853879928588867, -0.0234527587890625)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 0.6147497296333313)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, 3.853879928588867, 5.676544189453125)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 0.6147497296333313)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, 3.853879928588867, -5.723457336425781)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 0.6147497296333313)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(-2.5616455078125, -3.563746452331543, -1.3157424926757812)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), 2.469245672225952)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(-2.5616455078125, -1.6461706161499023, -1.3157424926757812)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), 2.2391364574432373)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(-2.5616455078125, -2.6049575805664062, -2.4662933349609375)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 2.085730791091919)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(-2.5616455078125, -2.6049575805664062, -0.1652069091796875)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 1.9323248863220215)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(-2.5616455078125, -2.6049575805664062, 0.21831512451171875)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 1.9323248863220215)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(-2.5616455078125, -1.6461706161499023, 1.3688583374023438)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), 2.3158397674560547)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(-2.5616455078125, -2.585780620574951, 2.5194091796875)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 1.970676302909851)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(-2.5616455078125, -3.563746452331543, 1.3688583374023438)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), 2.469245672225952)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(-2.5616455078125, 1.2301912307739258, 0.9853363037109375)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 5.920881271362305)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(-2.5616455078125, 1.2301912307739258, -0.9322357177734375)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 5.920881271362305)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(-2.5616455078125, 4.1449079513549805, 0.02655029296875)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(90)), 1.9323251247406006)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(-2.5616455078125, 2.687546730041504, 0.02655029296875)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), 1.9323248863220215)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(-2.5616455078125, 3.853879928588867, -0.0234527587890625)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 0.6147497296333313)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, -3.563746452331543, 4.384254455566406)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), 2.469245672225952)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, -1.6461706161499023, 4.384254455566406)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), 2.2391364574432373)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, -2.6049575805664062, 3.23370361328125)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 2.085730791091919)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, -2.6049575805664062, 5.5347900390625)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 1.9323248863220215)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, -2.6049575805664062, 5.918312072753906)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 1.9323248863220215)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, -1.6461706161499023, 7.068855285644531)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), 2.3158397674560547)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, -2.585780620574951, 8.219406127929688)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 1.970676302909851)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, -3.563746452331543, 7.068855285644531)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), 2.469245672225952)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, 1.2301912307739258, 6.685333251953125)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 5.920881271362305)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, 1.2301912307739258, 4.76776123046875)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 5.920881271362305)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, 4.1449079513549805, 5.7265472412109375)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(90)), 1.9323251247406006)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, 2.687546730041504, 5.7265472412109375)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), 1.9323248863220215)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, -3.563746452331543, -7.0157470703125)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), 2.469245672225952)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, -1.6461706161499023, -7.0157470703125)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), 2.2391364574432373)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, -2.6049575805664062, -8.166297912597656)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 2.085730791091919)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, -2.6049575805664062, -5.865211486816406)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 1.9323248863220215)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, -2.6049575805664062, -5.481689453125)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 1.9323248863220215)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, -1.6461706161499023, -4.331146240234375)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), 2.3158397674560547)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, -2.585780620574951, -3.1805953979492188)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 1.970676302909851)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, -3.563746452331543, -4.331146240234375)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), 2.469245672225952)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, 1.2301912307739258, -4.714668273925781)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 5.920881271362305)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, 1.2301912307739258, -6.632240295410156)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 5.920881271362305)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, 4.1449079513549805, -5.673454284667969)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(90)), 1.9323251247406006)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(0.13835430145263672, 2.687546730041504, -5.673454284667969)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), 1.9323248863220215)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(2.9383544921875, -3.563746452331543, -1.3157424926757812)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), 2.469245672225952)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(2.9383544921875, -1.6461706161499023, -1.3157424926757812)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), 2.2391364574432373)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(2.9383544921875, -2.6049575805664062, -2.4662933349609375)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 2.085730791091919)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(2.9383544921875, -2.6049575805664062, -0.1652069091796875)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 1.9323248863220215)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(2.9383544921875, -2.6049575805664062, 0.21831512451171875)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 1.9323248863220215)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(2.9383544921875, -1.6461706161499023, 1.3688583374023438)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), 2.3158397674560547)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(2.9383544921875, -2.585780620574951, 2.5194091796875)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 1.970676302909851)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(2.9383544921875, -3.563746452331543, 1.3688583374023438)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), 2.469245672225952)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(2.9383544921875, 1.2301912307739258, 0.9853363037109375)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 5.920881271362305)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(2.9383544921875, 1.2301912307739258, -0.9322357177734375)) * CFrame.Angles(math.rad(-90), math.rad(0), math.rad(0)), 5.920881271362305)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(2.9383544921875, 4.1449079513549805, 0.02655029296875)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(90)), 1.9323251247406006)  
+	  AddEvent(CFrame.new(MiddlePosition + Vector3.new(2.9383544921875, 2.687546730041504, 0.02655029296875)) * CFrame.Angles(math.rad(0), math.rad(0), math.rad(0)), 1.9323248863220215)
+	if Gun then
+		game.ReplicatedStorage.ShootEvent:FireServer(Events, Gun)
+		coroutine.resume(coroutine.create(function()
+			for i,v in pairs(Events) do
+				local Cframe = v.Cframe
+				local Distance = v.Distance
+				if Cframe and Distance then
+					local Bray = Instance.new("Part", game.Players.LocalPlayer.Character)
+					Bray.CanCollide = false
+					Bray.Anchored = true
+					Bray.Transparency = 0.5
+					Bray.Size = Vector3.new(0.1, 0.1, Distance)
+					Bray.CFrame = Cframe
+					Bray.Material = Enum.Material.Neon
+					Bray.BrickColor = BrickColor.Yellow()
+					game:GetService("Debris"):AddItem(Bray, 0.1)
+				end
+			end
+		end))
+		Gun:FindFirstChildOfClass("LocalScript").Disabled = true
+		Gun.Parent = game.Players.LocalPlayer.Character
+		Gun:Destroy()
+		PickUp(Gun or "Remington 870")
+	end
+end
+
+while task.wait() do
+	pcall(function()
+		SPAWNYARDPP(game.Players[Target].Character.PrimaryPart.Position)
+	end)
+end
